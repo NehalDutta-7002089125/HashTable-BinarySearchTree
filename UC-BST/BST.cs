@@ -13,7 +13,8 @@ namespace UC_BST
         {
             this.data = data;
         }
-        int Leftcount=0, Rightcount=0;
+       // int Leftcount=0, Rightcount=0;
+         bool result=false;
         public void add(T element)
         {
             T a= this.data;
@@ -52,5 +53,29 @@ namespace UC_BST
                 rightNode.show();
             }
         }
+        public bool ifexists(T element, BST<T>node)
+        {
+            if(node==null)
+            {
+                return false;
+            }
+            if(node.data.Equals(element))
+            {
+                Console.WriteLine("we found the element :"+node.data);
+                result=true;
+            }
+                     
+            if (element.CompareTo(node.data) <0)
+            {
+                ifexists(element, node.leftNode);
+            }
+            else
+           
+            {
+                ifexists(element, node.rightNode);
+            }
+            return result;
+        }
+
     }
 }

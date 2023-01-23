@@ -20,6 +20,8 @@ namespace UC_BST
             bst.add(63);
             bst.add(67);
             bst.show();
+            bool result = bst.ifexists(22, bst);
+            Console.WriteLine(result);
         }
     }
 }
